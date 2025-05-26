@@ -1,0 +1,149 @@
+.cart-page {
+  padding: 20px;
+  text-align: center;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.cart-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 700px;
+  padding: 15px;
+  background-color: #fff3f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: scale(1.01);
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  flex: 1;
+  text-align: left;
+}
+
+.cart-item-details h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #2d3436;
+}
+
+.cart-item-details p {
+  margin: 0;
+  color: #555;
+  font-weight: 500;
+}
+
+.quantity-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantity-buttons button {
+  padding: 6px 12px;
+  background-color: #ff7675;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.quantity-buttons button:hover {
+  background-color: #e17055;
+}
+
+.remove-btn {
+  background-color: #d63031;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #c0392b;
+}
+
+.total {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #2d3436;
+  font-weight: bold;
+}
+
+.cart-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.checkout-btn,
+.continue-btn {
+  padding: 10px 20px;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover,
+.continue-btn:hover {
+  background-color: #019875;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    width: 100%;
+  }
+
+  .cart-item-details {
+    width: 100%;
+  }
+
+  .cart-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
