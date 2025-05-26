@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/home.css'; // Make sure this contains your category image styling
+import '../styles/home.css';
 
 const Home = () => {
-  const categories = [
+  const categories = useMemo(() => ([
     {
       label: 'T-Shirts',
       images: [
         require('../img/tshirt/tshirt1.jpg'),
-      require('../img/tshirt/tshirt2.jpg'),
-      require('../img/tshirt/tshirt3.jpg'),
-       
+        require('../img/tshirt/tshirt2.jpg'),
+        require('../img/tshirt/tshirt3.jpg'),
       ]
     },
     {
@@ -37,7 +36,7 @@ const Home = () => {
         require('../img/sandals/sandals3.jpg'),
       ]
     }
-  ];
+  ]), []);
 
   const [indexes, setIndexes] = useState(Array(categories.length).fill(0));
 
@@ -46,7 +45,7 @@ const Home = () => {
       setIndexes((prev) =>
         prev.map((val, i) => (val + 1) % categories[i].images.length)
       );
-    }, 2000); // change image every 2 seconds
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [categories]);
